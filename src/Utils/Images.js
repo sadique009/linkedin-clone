@@ -1,5 +1,6 @@
 export default Images = {
-  PROFILE_PICTURE: require('../../assets/Icons/profile_picture.png'),
+  PROFILE_PICTURE: require('../../assets/Icons/linkedin-icon-round.png'),
+  PROFILE_LOGO: require('../../assets/Icons/linkedin-logo-long.png'),
   COMPANY: require('../../assets/company.jpg'),
   LIKE: require('../../assets/Icons/Like.png'),
   LOGOS: {
