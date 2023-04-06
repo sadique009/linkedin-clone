@@ -3,8 +3,9 @@ import React from 'react';
 import Colors from '../../Utils/Colors';
 
 export default ShowCourses = ({DATA}) =>
-  DATA.COURSES.map(item => (
+  DATA.COURSES.map((item, index) => (
     <View
+      key={index}
       style={{
         borderBottomColor: Colors.LIGHT_GRAY,
         borderTopWidth: 1,

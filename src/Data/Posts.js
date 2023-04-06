@@ -154,7 +154,7 @@ export default Posts = [
     isLiked: false, // is liked by current user or not
   },
   {
-    profile_picture: Images.USERS.USER13,
+    profile_picture: Images.USERS.USER12,
     name: 'Gaurav Jha',
     title: 'Founder P.S Software Solutions',
     timeAgo: 8, // hrs

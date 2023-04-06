@@ -1,7 +1,9 @@
-import {View, Text, ScrollView, FlatList} from 'react-native';
+import {View, Text, ScrollView, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Colors from '../Utils/Colors';
 import Jobs from '../Data/Jobs';
+import Premium from '../Components/Premium';
+import LikeDislike from '../Components/LikeDislike';
 import ShowAllFooter from '../Components/ShowAllFooter';
 import ItemSeparator from '../Components/ItemSeparator';
 import ShowJobs from '../Components/ShowJobs';
@@ -29,8 +31,9 @@ export default function Job() {
           ItemSeparatorComponent={() => <ItemSeparator />}
           ListFooterComponent={() => <ShowAllFooter />}
         />
-        {/* add like dislike & get premium from older projects here */}
       </View>
+      <Premium />
+      <LikeDislike />
     </ScrollView>
   );
 }

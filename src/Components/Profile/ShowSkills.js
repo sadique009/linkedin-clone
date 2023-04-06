@@ -5,8 +5,9 @@ import Styles from '../../Utils/Styles';
 import CustomIcon from '../CustomIcon';
 
 const ShowSkills = ({DATA}) =>
-  DATA.SKILLS.map(item => (
+  DATA.SKILLS.map((item, index) => (
     <View
+      key={index}
       style={{
         borderBottomColor: Colors.LIGHT_GRAY,
         borderBottomWidth: 1,

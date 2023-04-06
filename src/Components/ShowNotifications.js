@@ -56,12 +56,14 @@ export default ShowNotifications = ({item}) => {
         ) : item.isConnectionAccepted ? (
           <CTA title="Message" />
         ) : item.isTrending ? (
-          <Text>{item.trendingCount} Reactions</Text>
+          <Text style={{marginVertical: 6}}>
+            {item.trendingCount} Reactions
+          </Text>
         ) : null}
       </View>
       <View>
         <Text style={{fontSize: 13, marginBottom: 5}}>
-          {item.notificationTime}
+          {item.notificationTime}d
         </Text>
         <TouchableOpacity onPress={() => {}}>
           <CustomIcon name="ellipsis-vertical" size={22} color={Colors.BLACK} />

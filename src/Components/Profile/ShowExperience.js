@@ -5,8 +5,9 @@ import Colors from '../../Utils/Colors';
 import Styles from '../../Utils/Styles';
 
 const ShowExperience = ({DATA}) =>
-  DATA.EXPERIENCE.map(item => (
+  DATA.EXPERIENCE.map((item, index) => (
     <View
+      key={index}
       style={[
         Styles.flexCenter,
         {

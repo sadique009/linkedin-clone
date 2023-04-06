@@ -4,10 +4,12 @@ import Colors from '../Utils/Colors';
 import CustomIcon from './CustomIcon';
 import Styles from '../Utils/Styles';
 
+// "show all" footer name.
 export default function ShowAllFooter() {
   return (
     <View
       style={{
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         borderTopColor: Colors.GRAY,

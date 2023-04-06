@@ -1,4 +1,11 @@
-import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import Colors from '../Utils/Colors';
 import Images from '../Utils/Images';
@@ -47,9 +54,10 @@ export default function Post() {
           source={Images.PROFILE_PICTURE}
           style={{height: 46, width: 46}}
         />
-        <Text style={{color: Colors.GRAY, fontSize: 19, paddingTop: 16}}>
-          What do you want to talk about?
-        </Text>
+        <TextInput
+          style={{color: Colors.GRAY, fontSize: 19, paddingTop: 16}}
+          placeholder=" What do you want to talk about?"
+        />
       </View>
       <View
         style={{

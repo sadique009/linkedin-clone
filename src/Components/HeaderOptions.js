@@ -14,7 +14,7 @@ const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => (
         alignItems: 'center',
         backgroundColor: Colors.WHITE,
         elevation: 4,
-        paddingVertical: 7,
+        paddingVertical: 10,
       },
     ]}>
     <View style={{paddingLeft: 10}}>
@@ -72,6 +72,14 @@ const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => (
         />
       )}
     </TouchableOpacity>
+
+    <View style={{paddingRight: 10}}>
+      {isPostScreen ? null : (
+        <TouchableOpacity onPress={() => navigation.navigate(Screens.PROFILE)}>
+          <CustomIcon size={28} color={Colors.GRAY} name="settings-outline" />
+        </TouchableOpacity>
+      )}
+    </View>
   </View>
 );
 

@@ -10,6 +10,6 @@ export default Styles = StyleSheet.create({
   },
   flexCenter: {
     flexDirection: 'row',
-    alignItems: 'center',
+     
   },
 });

@@ -8,7 +8,7 @@ export default function Home() {
     <View>
       <FlatList
         data={Posts}
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={true}
         renderItem={({item}) => <ShowPosts item={item} />}
       />
     </View>

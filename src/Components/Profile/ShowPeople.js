@@ -5,8 +5,8 @@ import Colors from '../../Utils/Colors';
 import Styles from '../../Utils/Styles';
 
 export default ShowPeople = ({DATA}) =>
-  DATA.PEOPLE_VIEWED.map(item => (
-    <View style={[Styles.flexCenter, {paddingVertical: 10}]}>
+  DATA.PEOPLE_VIEWED.map((item, index) => (
+    <View key={index} style={[Styles.flexCenter, {paddingVertical: 10}]}>
       <Image
         source={item.profile_picture}
         style={{height: 50, width: 50, borderRadius: 100, marginRight: 20}}

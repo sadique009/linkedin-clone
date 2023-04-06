@@ -21,7 +21,7 @@ import CustomIcon from './Components/CustomIcon';
 import HeaderOptions from './Components/HeaderOptions';
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const MainStack = createNativeStackNavigator();
 const SignupStack = createNativeStackNavigator();
 const loginStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -75,24 +75,30 @@ const NotificationScreen = () => (
   </NotificationStack.Navigator>
 );
 
+// for hiding the tab bar when inside "profile" section.
 const showTabBar = route => {
-  const routeName = getFocusedRouteNameFromRoute(route);
+  const routeName = getFocusedRouteNameFromRoute(route); // this method is available in "react-navigation".
   return routeName === Screens.PROFILE ? 'none' : 'flex';
 };
 
+// this component is for bottom tab icons and their functionality.
 const header = (
   navigation,
   route,
   icon,
   title,
   iconLeft = '',
+
+  // by doing this, we are excluding "post screen" and "notification screen" because we have to add extra customizations in them later.
   isPostScreen = false,
   isNotificationScreen = false,
 ) => ({
   title: title,
   tabBarStyle: {display: showTabBar(route)},
-  tabBarBadge: isNotificationScreen ? 5 : null,
-  tabBarIcon: ({focused}) => (
+  tabBarBadge: isNotificationScreen ? 5 : null, // this is used to add badge to tab icons.
+  tabBarIcon: (
+    {focused}, // "focused" parameter is available in "tabBarIcon" prop.
+  ) => (
     <CustomIcon
       name={icon}
       size={28}
@@ -111,7 +117,8 @@ const header = (
 const Routes1 = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
+      <StatusBar backgroundColor={Colors.WHITE} barStyle="dark-content" />
+      <MainStack.Navigator
         initialRouteName={LoginScreen}
         // name={Screens.LOGIN_STACK}
         // name="Routes"
@@ -127,16 +134,16 @@ const Routes1 = () => {
           options={{headerShown: false}}
         /> */}
 
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="SignUpScreen" component={SignupScreen} />
-        <Stack.Screen
+        <MainStack.Screen name="LoginScreen" component={LoginScreen} />
+        <MainStack.Screen name="SignUpScreen" component={SignupScreen} />
+        <MainStack.Screen
           name="Routes"
           component={Routes}
           independent={true}
           options={{headerShown: false}}
         />
         {/* <Stack.Screen name="MainScreen" component={MainScreen} /> */}
-      </Stack.Navigator>
+      </MainStack.Navigator>
     </NavigationContainer>
   );
 };
@@ -146,20 +153,22 @@ export {Routes1};
 export default function Routes() {
   return (
     <>
-      <StatusBar backgroundColor={Colors.WHITE} barStyle="dark-content" />
-
       <Tab.Navigator
+        // don't confuse this with "options".
         screenOptions={{
           tabBarActiveTintColor: Colors.BLACK,
           tabBarInactiveTintColor: Colors.GRAY,
-          tabBarLabelStyle: {fontWeight: 'bold'},
+          tabBarLabelStyle: {fontWeight: 'bold', fontSize: 12},
           headerStyle: {elevation: 10},
         }}>
+        {/* we will pass all the stack screen components inside the tab navigator.  */}
+        {/* we are calling "HomeScreen" component here which is further calling our "HOME" page above. */}
         <Tab.Screen
           name={Screens.HOME_STACK}
           component={HomeScreen}
-          options={({navigation, route}) =>
-            header(navigation, route, 'home', 'Home')
+          options={
+            ({navigation, route}) => header(navigation, route, 'home', 'Home') // here, "home" is icon name and "Home" is title.
+            // these 4 (navigation, route, 'home', 'Home') are the parameters that we have defined in header component above.
           }
         />
         <Tab.Screen

@@ -8,7 +8,7 @@ import Styles from '../Utils/Styles';
 
 export default function Network({navigation}) {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}>
+    <ScrollView showsVerticalScrollIndicator={true} style={{flex: 1}}>
       <TouchableOpacity
         onPress={() => {}}
         style={[
@@ -31,7 +31,7 @@ export default function Network({navigation}) {
           flex: 1,
           backgroundColor: Colors.WHITE,
           paddingTop: 10,
-          paddingHorizontal: 10,
+          padding: 10,
         }}>
         <Text
           style={{
@@ -46,7 +46,7 @@ export default function Network({navigation}) {
         <FlatList
           contentContainerStyle={[Styles.flexCenter, {flexWrap: 'wrap'}]}
           data={Networks}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
           renderItem={({item}) => <ShowNetworks item={item} />}
         />
       </View>

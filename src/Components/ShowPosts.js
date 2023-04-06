@@ -41,7 +41,7 @@ export default function ShowPosts({item}) {
           <Text style={{width: 180}} numberOfLines={1} ellipsizeMode="tail">
             {item.title}
           </Text>
-          <Text style={{fontSize: 11}}>{item.timeAgo} hr</Text>
+          <Text style={{fontSize: 12}}>{item.timeAgo} hr</Text>
         </View>
         {item.connection ? (
           <TouchableOpacity
@@ -146,17 +146,17 @@ export default function ShowPosts({item}) {
             size={19}
             color={Colors.GRAY}
           />
-          <Text>comment</Text>
+          <Text>Comment</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => {}}>
           <Icon name="share" size={19} color={Colors.GRAY} />
-          <Text>share</Text>
+          <Text>Share</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => {}}>
           <CustomIcon name="send-outline" size={19} color={Colors.GRAY} />
-          <Text>send</Text>
+          <Text>Send</Text>
         </TouchableOpacity>
       </View>
     </View>

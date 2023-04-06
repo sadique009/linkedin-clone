@@ -5,8 +5,9 @@ import Colors from '../../Utils/Colors';
 import Styles from '../../Utils/Styles';
 
 export default ShowProjects = ({DATA}) =>
-  DATA.PROJECTS.map(item => (
+  DATA.PROJECTS.map((item, index) => (
     <View
+      key={index}
       style={{
         borderBottomColor: Colors.LIGHT_GRAY,
         borderBottomWidth: 1,

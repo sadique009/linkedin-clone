@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/Entypo';
 import Styles from '../../Utils/Styles';
 
 const ShowLicenses = ({DATA}) =>
-  DATA.LICENSE_CERTIFICATION.map(item => (
+  DATA.LICENSE_CERTIFICATION.map((item, index) => (
     <View
+      key={index}
       style={[
         Styles.flexCenter,
         {

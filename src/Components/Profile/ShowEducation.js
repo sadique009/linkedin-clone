@@ -4,8 +4,8 @@ import Colors from '../../Utils/Colors';
 import Styles from '../../Utils/Styles';
 
 const ShowEducation = ({DATA}) =>
-  DATA.EDUCATION.map(item => (
-    <View style={[Styles.flexCenter, {paddingBottom: 10}]}>
+  DATA.EDUCATION.map((item, index) => (
+    <View key={Math.random} style={[Styles.flexCenter, {paddingBottom: 10}]}>
       <Image
         source={item.logo}
         style={{height: 50, width: 50, marginHorizontal: 16}}

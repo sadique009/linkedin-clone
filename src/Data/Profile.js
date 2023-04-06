@@ -78,8 +78,7 @@ export default Profile = {
       title: 'React-Native Expert Certification',
       logo: Images.LOGOS.LOGO4,
       issuedDate: 'Dec-2021',
-      hasCertificate: true,
-      certificate: 'https://sgcodes.co.in/youtube',
+      hasCertificate: false,
     },
     {
       title: 'JavaScript Advanced',
@@ -93,8 +92,7 @@ export default Profile = {
       logo: Images.LOGOS.LOGO7,
       issuedDate: 'Jan-2020',
       expirationDate: 'Dec-2025', // no expiration date as well
-      hasCertificate: true,
-      certificate: 'https://sgcodes.co.in/youtube',
+      hasCertificate: false,
     },
   ],
   SKILLS: [
@@ -117,7 +115,7 @@ export default Profile = {
   ],
   COURSES: [
     'React Native Tutorial',
-    'React-Native Crash Course by S.G.',
+    'React Crash Courses',
     'Project Development with React-Native',
   ],
   PROJECTS: [
