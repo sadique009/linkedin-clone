@@ -123,7 +123,14 @@ const SignUpForm = ({navigation}) => {
                 value={values.password}
               />
             </View>
-            <Pressable style={styles.button(isValid)} onPress={handleSubmit}>
+            <Pressable
+              style={styles.button(isValid)}
+              onPress={
+                (handleSubmit,
+                // Alert.alert('Success', 'You are now registered.'),
+                () => navigation.push('LoginScreen'))
+                // () => alert("you've successfully registered")
+              }>
               <Text style={styles.buttonText}>Sign up </Text>
             </Pressable>
 

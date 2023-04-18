@@ -10,7 +10,8 @@ import ShowJobs from '../Components/ShowJobs';
 
 export default function Job() {
   return (
-    <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+    <>
+      {/* <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}> */}
       <View
         style={{flex: 1, backgroundColor: Colors.WHITE, marginVertical: 10}}>
         <Text
@@ -34,6 +35,6 @@ export default function Job() {
       </View>
       <Premium />
       <LikeDislike />
-    </ScrollView>
+    </>
   );
 }

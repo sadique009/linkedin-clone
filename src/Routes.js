@@ -124,7 +124,7 @@ const Routes1 = () => {
         // name="Routes"
         component={LoginScreen}
         // component={Routes}
-        options={{headerShown: false}}>
+        screenOptions={{headerShown: false}}>
         {/* <Stack.Screen
           initialRouteName={LoginScreen}
           // name={Screens.LOGIN_STACK}

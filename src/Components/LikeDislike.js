@@ -10,6 +10,7 @@ const LikeDislike = () => (
       marginVertical: 10,
       padding: 10,
       flexDirection: 'row',
+      justifyContent: 'space-evenly',
     }}>
     <View style={{width: 250}}>
       <Text style={{fontSize: 19, fontWeight: 'bold', color: Colors.BLACK}}>
