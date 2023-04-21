@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import SignupScreen from './Screens/SignupScreen';
 import LoginScreen from './Screens/LoginScreen';
 import MainScreen from './Screens/MainScreen';
@@ -29,6 +30,17 @@ const JobStack = createNativeStackNavigator();
 const PostStack = createNativeStackNavigator();
 const NetworkStack = createNativeStackNavigator();
 const NotificationStack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Profile" component={Profile} />
+    </Drawer.Navigator>
+  );
+}
+export {MyDrawer};
 
 const Signup = () => (
   <SignupStack.Navigator screenOptions={{headerShown: false}}>
@@ -44,7 +56,8 @@ const HomeScreen = () => (
   <HomeStack.Navigator screenOptions={{headerShown: false}}>
     {/* <HomeStack.Screen name={Screens.SIGNUP} component={SignupScreen} /> */}
     <HomeStack.Screen name={Screens.HOME} component={Home} />
-    <HomeStack.Screen name={Screens.PROFILE} component={Profile} />
+
+    {/* <HomeStack.Screen name={Screens.PROFILE} component={Profile} /> */}
   </HomeStack.Navigator>
 );
 
@@ -105,6 +118,7 @@ const header = (
       color={focused ? Colors.BLACK : Colors.GRAY}
     />
   ),
+
   header: () => (
     <HeaderOptions
       iconLeft={iconLeft}
@@ -163,6 +177,15 @@ export default function Routes() {
         }}>
         {/* we will pass all the stack screen components inside the tab navigator.  */}
         {/* we are calling "HomeScreen" component here which is further calling our "HOME" page above. */}
+
+        {/* <Tab.Screen
+          name="MyDrawer"
+          component={MyDrawer}
+          independent={true}
+          options={({navigation, route}) =>
+            header(navigation, route, 'settings', 'Settings')
+          }
+        /> */}
         <Tab.Screen
           name={Screens.HOME_STACK}
           component={HomeScreen}
@@ -171,6 +194,15 @@ export default function Routes() {
             // these 4 (navigation, route, 'home', 'Home') are the parameters that we have defined in header component above.
           }
         />
+        <Tab.Screen
+          name="MyDrawer"
+          component={MyDrawer}
+          independent={true}
+          options={({navigation, route}) =>
+            header(navigation, route, 'settings', 'Settings')
+          }
+        />
+
         <Tab.Screen
           name={Screens.NETWORK_STACK}
           component={NetworkScreen}

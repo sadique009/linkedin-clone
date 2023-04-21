@@ -7,6 +7,7 @@ import Screens from '../Utils/Screens';
 import Images from '../Utils/Images';
 import LoginScreen from '../Screens/LoginScreen';
 import Posts from '../Data/Posts';
+import {MyDrawer} from '../Routes';
 
 const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => {
   // const {searchList, setSearchList} = useState(Posts);
@@ -64,6 +65,7 @@ const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => {
               style={{borderRadius: 50, height: 35, width: 35}}
             />
           </TouchableOpacity>
+          // <MyDrawer />
         )}
       </View>
 
