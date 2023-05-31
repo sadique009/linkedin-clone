@@ -9,7 +9,7 @@ import LoginScreen from '../Screens/LoginScreen';
 import Posts from '../Data/Posts';
 import {MyDrawer} from '../Routes';
 
-const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => {
+const HeaderOptions = ({props, navigation, iconLeft, isPostScreen}) => {
   // const {searchList, setSearchList} = useState(Posts);
   // const {search, setSearch} = useState(Posts);
   // console.log(Posts);
@@ -59,13 +59,14 @@ const HeaderOptions = ({navigation, iconLeft, isPostScreen}) => {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            onPress={() => navigation.navigate(Screens.PROFILE)}>
+            // onPress={() => navigation.navigate(Screens.PROFILE)}>
+            // onPress={() => props.navigation.toggleDrawer()}>
+            onPress={() => {}}>
             <Image
               source={Images.PROFILE_PICTURE}
               style={{borderRadius: 50, height: 35, width: 35}}
             />
           </TouchableOpacity>
-          // <MyDrawer />
         )}
       </View>
 

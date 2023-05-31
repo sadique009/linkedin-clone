@@ -34,8 +34,12 @@ const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      // drawerContent={props => <HeaderOptions {...props} />}
+      initialRouteName="Home"
+      screenOptions={{headerTitleAlign: 'center'}}>
       <Drawer.Screen name="Home" component={Home} />
+
       <Drawer.Screen name="Profile" component={Profile} />
     </Drawer.Navigator>
   );
@@ -55,7 +59,15 @@ const Login = () => (
 const HomeScreen = () => (
   <HomeStack.Navigator screenOptions={{headerShown: false}}>
     {/* <HomeStack.Screen name={Screens.SIGNUP} component={SignupScreen} /> */}
-    <HomeStack.Screen name={Screens.HOME} component={Home} />
+    {/* <HomeStack.Screen name={Screens.HOME} component={Home} /> */}
+    <HomeStack.Screen
+      name="MyDrawer"
+      component={MyDrawer}
+      independent={true}
+      options={({navigation, route}) =>
+        header(navigation, route, 'settings', 'Settings')
+      }
+    />
 
     {/* <HomeStack.Screen name={Screens.PROFILE} component={Profile} /> */}
   </HomeStack.Navigator>
@@ -132,6 +144,7 @@ const Routes1 = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={Colors.WHITE} barStyle="dark-content" />
+
       <MainStack.Navigator
         initialRouteName={LoginScreen}
         // name={Screens.LOGIN_STACK}
@@ -174,6 +187,7 @@ export default function Routes() {
           tabBarInactiveTintColor: Colors.GRAY,
           tabBarLabelStyle: {fontWeight: 'bold', fontSize: 12},
           headerStyle: {elevation: 10},
+          // headerShown: false,
         }}>
         {/* we will pass all the stack screen components inside the tab navigator.  */}
         {/* we are calling "HomeScreen" component here which is further calling our "HOME" page above. */}
@@ -194,14 +208,14 @@ export default function Routes() {
             // these 4 (navigation, route, 'home', 'Home') are the parameters that we have defined in header component above.
           }
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="MyDrawer"
           component={MyDrawer}
           independent={true}
           options={({navigation, route}) =>
             header(navigation, route, 'settings', 'Settings')
           }
-        />
+        /> */}
 
         <Tab.Screen
           name={Screens.NETWORK_STACK}
